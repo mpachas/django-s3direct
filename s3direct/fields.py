@@ -1,7 +1,7 @@
 from django.db.models import Field
-from django.forms import widgets
-from s3direct.widgets import S3DirectEditor
 from django.conf import settings
+
+from s3direct.widgets import S3DirectEditor
 
 
 class S3DirectField(Field):
