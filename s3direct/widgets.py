@@ -1,4 +1,5 @@
 import urllib
+from urlparse import urlparse
 from django.core.files.storage import DefaultStorage
 from storages.backends.s3boto import S3BotoStorageFile
 import os
@@ -105,7 +106,7 @@ class S3DirectFileUpload(widgets.TextInput):
         mode = 'r'
         storage = DefaultStorage()
         storage.location = ''
-        name = urllib.unquote_plus(s3_path[len(settings.S3_URL):].lstrip('/'))
+        name = urllib.unquote_plus(urlparse(s3_path).path.lstrip('/'))
         input_file = S3BotoStorageFile(name, mode, storage)
         return input_file
 
