@@ -32,7 +32,7 @@ def get_upload_params(request, upload_to=''):
     
     policy = b64encode(policy_object.replace('\n', '').replace('\r', ''))
     signature = b64encode(hmac.new(settings.AWS_SECRET_ACCESS_KEY, policy, sha).digest())
-    key = "%s/%s/${filename}" % (upload_to or S3DIRECT_DIR, uuid.uuid4().hex)
+    key = "%s/${filename}" % (upload_to or S3DIRECT_DIR)
     
     data = {
         "policy": policy,
