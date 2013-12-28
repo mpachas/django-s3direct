@@ -42,6 +42,7 @@ def get_upload_params(request, upload_to=''):
         "form_action": "https://%s.s3.amazonaws.com" % settings.AWS_STORAGE_BUCKET_NAME,
         "success_action_status": "201",
         "acl": "public-read",
+        "replace": False,
         "Content-Type": content_type
     }
 
