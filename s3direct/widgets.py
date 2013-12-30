@@ -11,7 +11,8 @@ from django.conf import settings
 
 HTML = """
 <div class="s3direct" data-url="{policy_url}">
-    <a class="link" target="_blank" href="{file_url}">{file_name}</a>
+    <a class="link" target="_blank" href="{file_url}">{file_name}
+    <img src="{file_url}" width="150"></a>
     <a class="remove" href="#remove">Remove</a>
     <input type="hidden" value="{file_url}" id="{element_id}" name="{name}" />
     <input type="file" class="fileinput" />

@@ -1,6 +1,7 @@
 .s3direct {
   display: inline-block;
   width: 220px;
+  float: left;
 }
 
 .s3direct .progress {
