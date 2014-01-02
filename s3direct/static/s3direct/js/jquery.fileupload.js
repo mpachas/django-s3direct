@@ -932,7 +932,11 @@
             } else if (files[0].name === undefined && files[0].fileName) {
                 // File normalization for Safari 4 and Firefox 3:
                 $.each(files, function (index, file) {
-                    file.name = file.fileName;
+                    var tst = +new Date;
+                    var nombre = file.fileName;
+                    var ext =  nombre.split('.').pop();
+                    var fname = nombre+'_'+tst+'.'+ext;
+                    file.name = fname;
                     file.size = file.fileSize;
                 });
             }
