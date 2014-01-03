@@ -789,7 +789,6 @@
             $.each(fileSet || data.files, function (index, element) {
                 var newData = $.extend({}, data);
                 newData.files = fileSet ? element : [element];
-                console.log(paramNameSet[index]); //mpachas
                 newData.paramName = paramNameSet[index];
                 newData.submit = function () {
                     newData.jqXHR = this.jqXHR =
