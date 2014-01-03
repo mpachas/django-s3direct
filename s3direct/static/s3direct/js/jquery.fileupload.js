@@ -330,6 +330,7 @@
                 options.headers['Content-Range'] = options.contentRange;
             }
             if (!multipart) {
+                console.log('estoyenuno');
                 options.headers['Content-Disposition'] = 'attachment; filename="' +
                     encodeURI(file.name) + '"';
                 options.contentType = file.type;
@@ -364,6 +365,7 @@
                         });
                     }
                     if (options.blob) {
+                        console.log('estoyendos');
                         options.headers['Content-Disposition'] = 'attachment; filename="' +
                             encodeURI(file.name) + '"';
                         formData.append(paramName, options.blob, file.name);
@@ -930,8 +932,10 @@
                 // the input value as name with path information removed:
                 files = [{name: value.replace(/^.*\\/, '')}];
             } else if (files[0].name === undefined && files[0].fileName) {
+                console.log('estoyentres');
                 // File normalization for Safari 4 and Firefox 3:
                 $.each(files, function (index, file) {
+                    console.log('estoyencuatro');
                     file.name = file.fileName;
                     file.size = file.fileSize;
                 });
