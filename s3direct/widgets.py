@@ -89,8 +89,8 @@ class S3DirectFileUpload(widgets.TextInput):
         kwargs = {'upload_to': self.upload_to}
 
         policy_url = reverse('s3direct', kwargs=kwargs)
-        file_url = value if value else ''
-        file_name = urllib.unquote_plus(value) if value else ''
+        file_url = value.name if value else ''
+        file_name = urllib.unquote_plus(value.name) if value else ''
 
         output = HTML.format(policy_url=policy_url,
                              file_url=file_url,
